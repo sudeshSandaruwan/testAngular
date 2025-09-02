@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../Service/auth-service';
 import { FormControl, FormGroup, Validators , ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css'
 })
@@ -15,7 +17,9 @@ export class LoginPage implements OnInit {
     token:any
   
   constructor(
-    private auth:AuthService
+    private auth:AuthService,
+    private router:Router
+    
   
   ){  }
 
@@ -42,6 +46,7 @@ userLogin() {
       this.token=val.token
       console.log(val.token)
       sessionStorage.setItem('token',this.token)
+      this.router.navigate(['user'])
     });
   } else {
     console.log('Form is invalid');
