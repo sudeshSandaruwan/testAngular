@@ -3,19 +3,35 @@
         <div class="card">
             <div class="col-sm-6 col-md-4">
                 <!-- <button class="btn btn-sm btn-primary">submit</button> -->
-               
-                <form [formGroup]="loginForm"  (ngSubmit)="userLogin()">
+
+                <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
                     <div class="mb-3">
                         <label for="username" class="form-lable">User Name</label>
-                        <input type="text" id="userName" class="form-control" placeholder="Enter Username" formControlName="userName">
+                        <input type="text" id="userName" class="form-control" placeholder="Enter Username"
+                            formControlName="userName">
 
                     </div>
                     <div class="mb-3">
                         <label for="Password" class="form-lable">Password</label>
-                      <input type="password" id="password" class="form-control" placeholder="Enter password" formControlName="password">
+                        <input type="password" id="password" class="form-control" placeholder="Enter password"
+                            formControlName="password">
 
                     </div>
-                    <button class="btn btn-sm btn-primary" >Submit</button>
+                    <button class="btn btn-sm btn-primary">Submit</button>
+                    <p id="test">test paragrap</p>
+                    <button type="button"
+                        onclick='document.getElementById("test").innerHTML =" this test pargaraph chnage by JSCROPT"'>
+                        Chnage text</button>
+
+                    <!-- <p id="tt">test text</p>
+                    <button type="button" onclick='myFunc()'>test</button>
+
+                    <script>
+                        function myFunc() {
+                            document.getElementById("tt").innerHTML = "test done";
+                        }
+                    </script> -->
+
                 </form>
 
             </div>
