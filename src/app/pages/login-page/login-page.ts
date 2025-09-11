@@ -46,7 +46,7 @@ userLogin() {
       this.token=val.token
       console.log(val.token)
       sessionStorage.setItem('token',this.token)
-      this.router.navigate(['user'])
+      this.router.navigate(['main/user'])
     });
   } else {
     console.log('Form is invalid');
